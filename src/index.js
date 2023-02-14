@@ -11,13 +11,23 @@
  * @returns numero de telefone formatado
  */
 function formatPhoneNumber(numbers) {
-  if (typeof numbers != 'object' || numbers.length > 12) return '';
   let numberPhone = '';
   numbers.forEach((element, index) => {
+    // if(numbers.length >)
     numberPhone = numberPhone.concat(element);
   });
 
-  //numberPhone = '(' + numberPhone.substring(0,2) + ') ' + numberPhone.substring(2,6) + '-' + numberPhone.substring(7,11);
+  numberPhone =
+    '(' +
+    numberPhone.substring(0, 2) +
+    ') ' +
+    (numbers.length == 10
+      ? numberPhone.substring(2, 6)
+      : numberPhone.substring(2, 7)) +
+    '-' +
+    (numbers.length == 10
+      ? numberPhone.substring(6, 11)
+      : numberPhone.substring(7, 11));
 
   return numberPhone
     .toString()
