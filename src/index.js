@@ -29,9 +29,9 @@ function formatPhoneNumber(numbers) {
       ? numberPhone.substring(6, 11)
       : numberPhone.substring(7, 11));
 
-  return numberPhone
-    .toString()
-    .replace(/(\d{2})(\d{1})(\d{4})(\d{4})/, '($1) $3-$4');
+  return numberPhone;
+  // .toString()
+  // .replace(/(\d{2})(\d{1})(\d{4})(\d{4})/, '($1) $3-$4');
 }
 
 module.exports = formatPhoneNumber;
